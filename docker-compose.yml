@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: octantis-db
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_USER: api
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./volumes/octantis-db:/var/lib/postgresql/data:rw
