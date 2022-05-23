@@ -5,6 +5,8 @@ import CallMade from "@mui/icons-material/CallMade";
 import CallReceived from "@mui/icons-material/CallReceived";
 import Tooltip from "@mui/material/Tooltip";
 import InfoIcon from "@mui/icons-material/Info";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 export default function BasicCard({ value, trend, kpiName, definition, unit }) {
   return (
@@ -12,7 +14,7 @@ export default function BasicCard({ value, trend, kpiName, definition, unit }) {
       sx={{
         minWidth: 275,
         maxWidth: 300,
-        backgroundColor: "#2E2E33",
+        backgroundColor: "primary.light",
         margin: "20px",
       }}
     >
@@ -20,10 +22,9 @@ export default function BasicCard({ value, trend, kpiName, definition, unit }) {
         sx={{
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "#2E2E33",
         }}
       >
-        <div
+        <Box
           style={{
             width: "100%",
             fontSize: 18,
@@ -32,20 +33,20 @@ export default function BasicCard({ value, trend, kpiName, definition, unit }) {
             flexDirection: "row",
             justifyContent: "space-between",
           }}
-          color="text.secondary"
+          color="primary.text"
           gutterBottom
         >
-          <span> {kpiName}</span>
+          <Typography> {kpiName}</Typography>
           <Tooltip title={definition}>
             <InfoIcon />
           </Tooltip>
-        </div>
+        </Box>
 
-        <div>
-          <span style={{ fontSize: 44 }}>{value} </span>
-          <span style={{ fontSize: 24 }}>{unit} </span>
-        </div>
-        <div
+        <Box color="primary.text">
+          <Typography style={{ fontSize: 44 }}>{value} </Typography>
+          <Typography style={{ fontSize: 24 }}>{unit} </Typography>
+        </Box>
+        <Box
           component="div"
           style={{
             fontSize: 14,
@@ -53,6 +54,7 @@ export default function BasicCard({ value, trend, kpiName, definition, unit }) {
             display: "flex",
             alignItems: "flex-end",
           }}
+          color="primary.text"
         >
           {trend > 0 ? (
             <span>
@@ -67,7 +69,7 @@ export default function BasicCard({ value, trend, kpiName, definition, unit }) {
           )}
 
           <span style={{ fontSize: 14 }}>{unit} </span>
-        </div>
+        </Box>
       </CardContent>
     </Card>
   );

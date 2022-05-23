@@ -3,6 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip } from "recharts";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const data = [
   {
@@ -50,12 +51,11 @@ const data = [
 ];
 
 const Evolution = ({ kpiName, value, trend, definition, color }) => {
-  console.log(kpiName, value, trend, definition);
   return (
     <Card
       sx={{
         width: "600px",
-        backgroundColor: "#2E2E33",
+        backgroundColor: "primary.light",
         margin: "10px",
       }}
     >
@@ -63,10 +63,10 @@ const Evolution = ({ kpiName, value, trend, definition, color }) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "#2E2E33",
+          backgroundColor: "primary.light",
         }}
       >
-        <div
+        <Box
           style={{
             width: "100%",
             fontSize: 18,
@@ -76,22 +76,21 @@ const Evolution = ({ kpiName, value, trend, definition, color }) => {
             justifyContent: "space-between",
           }}
         >
-          <span
+          <Typography
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
             }}
           >
-            <span> {kpiName}</span>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            <Typography color="primary.text"> {kpiName}</Typography>
+            <Typography sx={{ mb: 1.5 }} color="secondary.grey">
               {definition}
             </Typography>
-          </span>
-          <span style={{ color: "#8884d8" }}>{value}</span>
-        </div>
+          </Typography>
+          <Typography sx={{ color: "#8884d8" }}>{value}</Typography>
+        </Box>
 
-        <div></div>
       </CardContent>
       <AreaChart
         width={600}

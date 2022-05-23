@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import BasicCard from "../../components/Card";
 import Evolution from "./evolution";
+import Box from "@mui/material/Box";
 
 const KPIS = [
   {
@@ -52,17 +53,27 @@ const KPIS = [
 
 const Field = () => {
   return (
-    <div style={{ backgroundColor: "black", width: "100%" }}>
+    <Box sx={{ backgroundColor: "primary.main", width: "100%" }}>
       <Accordion>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          style={{ flexDirection: "row-reverse" }}
+          sx={{
+            flexDirection: "row-reverse",
+            backgroundColor: "primary.main",
+            color: "secondary.main",
+          }}
         >
-          <Typography>Live </Typography>
+          <Typography color="primary.text"> Live </Typography>
         </AccordionSummary>
-        <AccordionDetails style={{ display: "flex", flexDirection: "row" }}>
+        <AccordionDetails
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            backgroundColor: "primary.main",
+          }}
+        >
           {KPIS.map((kpi) => (
             <BasicCard
               value={kpi.value}
@@ -76,15 +87,24 @@ const Field = () => {
       </Accordion>
       <Accordion>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          style={{ flexDirection: "row-reverse" }}
+          sx={{
+            flexDirection: "row-reverse",
+            backgroundColor: "primary.main",
+            color: "secondary.main",
+          }}
         >
-          <Typography>History </Typography>
+          <Typography color="primary.text">History</Typography>
         </AccordionSummary>
         <AccordionDetails
-          style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            backgroundColor: "primary.main",
+          }}
         >
           {KPIS.map((kpi) => (
             <Evolution
@@ -96,7 +116,7 @@ const Field = () => {
           ))}
         </AccordionDetails>
       </Accordion>
-    </div>
+    </Box>
   );
 };
 export default Field;

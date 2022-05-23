@@ -6,7 +6,19 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const darkTheme = createTheme({
   palette: {
-    mode: "dark",
+    primary: {
+      // Purple and green play nicely together.
+      main: "#121212",
+      light:"#2E2E33",
+      text:"white"
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#6FCF97',//green
+      contrastText: '#ffcc00',//yellow
+      light: '#0066ff',
+      text:"grey"
+    },
   },
 });
 
