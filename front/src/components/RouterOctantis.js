@@ -1,8 +1,8 @@
 import * as React from "react";
 
 import { Route, Routes } from "react-router-dom";
-import Field from "./Field";
-import WineCellar from "./WineCellar";
+import Field from "../pages/Field";
+import WineCellar from "../pages/WineCellar";
 
 const RouterOctantis = () => {
   return (
