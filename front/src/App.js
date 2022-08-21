@@ -17,7 +17,7 @@ const darkTheme = createTheme({
       main: '#6FCF97',//green
       contrastText: '#ffcc00',//yellow
       light: '#0066ff',
-      text:"grey"
+      text:"#666"
     },
   },
 });

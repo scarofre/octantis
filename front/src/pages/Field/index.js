@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import BasicCard from "../../components/Card";
 import Evolution from "./evolution";
 import Box from "@mui/material/Box";
+import { useState } from "react";
 
 const KPIS = [
   {
@@ -52,9 +53,12 @@ const KPIS = [
 ];
 
 const Field = () => {
+  const [isLiveExpanded, setIsLiveExpanded] = useState(true);
+  const [isEvolutionExpanded, setIsEvolutionExpanded] = useState(true);
+
   return (
-    <Box sx={{ backgroundColor: "primary.main", width: "100%" }}>
-      <Accordion>
+    <Box sx={{ backgroundColor: "primary.main", width: "100%", height:"100%" }}>
+      <Accordion expanded={isLiveExpanded} onChange={()=>setIsLiveExpanded(!isLiveExpanded)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -72,6 +76,7 @@ const Field = () => {
             display: "flex",
             flexDirection: "row",
             backgroundColor: "primary.main",
+            flexWrap: "wrap"
           }}
         >
           {KPIS.map((kpi) => (
@@ -85,7 +90,7 @@ const Field = () => {
           ))}
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion expanded={isEvolutionExpanded} onChange={()=>setIsEvolutionExpanded(!isEvolutionExpanded)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"

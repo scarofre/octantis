@@ -84,7 +84,7 @@ const Evolution = ({ kpiName, value, trend, definition, color }) => {
             }}
           >
             <Typography color="primary.text"> {kpiName}</Typography>
-            <Typography sx={{ mb: 1.5 }} color="secondary.grey">
+            <Typography sx={{ mb: 1.5 }} color="secondary.text">
               {definition}
             </Typography>
           </Typography>
